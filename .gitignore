@@ -1,0 +1,52 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+
+# Dataset files
+datasets/raw/*
+datasets/processed/*
+
+# Model checkpoints
+checkpoints/*
+*.pth
+*.pt
+*.onnx
+
+# Training outputs
+runs/
+logs/
+wandb/
+
+# Frontend dependencies
+node_modules/
+dist/
+build/
+
+# Temporary files
+*.log
+*.tmp
+# Explicit project exclusions
+datasets/raw/
+datasets/processed/
+checkpoints/
+node_modules/

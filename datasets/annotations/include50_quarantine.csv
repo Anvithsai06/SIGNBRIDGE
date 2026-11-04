@@ -1,0 +1,30 @@
+parent_label,label,video_path,include_50,dataset_split
+Animals,1. Dog,Animals/1. Dog/MVI_3060.MOV,True,train
+Places,35. Bank,Animals/1. Dog/MVI_3060.MOV,True,train
+Places,19. House,Places/19. House/MVI_3349.MOV,True,train
+Animals,4. Bird,Places/19. House/MVI_3349.MOV,True,train
+Colours,55. White,Colours/55. White/MVI_5062.MOV,True,train
+Places,23. Court,Colours/55. White/MVI_5062.MOV,True,train
+Adjectives,1. loud,Adjectives/1. loud/MVI_9290.MOV,True,train
+Places,23. Court,Adjectives/1. loud/MVI_9290.MOV,True,train
+Electronics,53. Fan,Electronics/53. Fan/MVI_4532.MOV,True,train
+Places,28. Store or Shop,Electronics/53. Fan/MVI_4532.MOV,True,train
+Clothes,42. T-Shirt,Clothes/42. T-Shirt/MVI_3851.MOV,True,train
+Animals,4. Bird,Clothes/42. T-Shirt/MVI_3851.MOV,True,train
+Adjectives,79. short,Adjectives/79. short/MVI_5110.MOV,True,train
+Animals,1. Dog,Animals/1. Dog/MVI_3028.MOV,True,train
+Places,23. Court,Animals/1. Dog/MVI_3028.MOV,True,train
+Adjectives,87. hot,Adjectives/87. hot/MVI_5137.MOV,True,train
+Animals,4. Bird,Adjectives/87. hot/MVI_5137.MOV,True,train
+People,66. Brother,People/66. Brother/MVI_4076.MOV,True,train
+Animals,4. Bird,People/66. Brother/MVI_4076.MOV,True,train
+People,61. Father,People/61. Father/MVI_5228.MOV,True,train
+Places,28. Store or Shop,People/61. Father/MVI_5228.MOV,True,train
+Adjectives,91. new,Adjectives/91. new/MVI_5307.MOV,True,train
+Adjectives,84. small little,Adjectives/91. new/MVI_5307.MOV,True,train
+Places,23. Court,Places/23. Court/MVI_3285.MOV,True,train
+Animals,4. Bird,Places/23. Court/MVI_3285.MOV,True,train
+Seasons,64. Fall,Seasons/64. Fall/MVI_5000.MOV,True,train
+Places,35. Bank,Seasons/64. Fall/MVI_5000.MOV,True,train
+Adjectives,78. long,Adjectives/78. long/MVI_5106.MOV,True,test
+Places,19. House,Adjectives/78. long/MVI_5106.MOV,True,test
