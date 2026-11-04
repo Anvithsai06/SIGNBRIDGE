@@ -8,8 +8,40 @@ class VideoPreprocessor:
         self.num_frames = num_frames
         self.image_size = image_size
 
-    def load_video(self, video_path):
+    def resize_with_padding(self, frame):
+        height, width = frame.shape[:2]
 
+        scale = min(
+            self.image_size / width,
+            self.image_size / height
+        )
+
+        new_width = int(round(width * scale))
+        new_height = int(round(height * scale))
+
+        resized = cv2.resize(
+            frame,
+            (new_width, new_height),
+            interpolation=cv2.INTER_AREA
+        )
+
+        canvas = np.full(
+            (self.image_size, self.image_size, 3),
+            114,
+            dtype=np.uint8
+        )
+
+        x_offset = (self.image_size - new_width) // 2
+        y_offset = (self.image_size - new_height) // 2
+
+        canvas[
+            y_offset:y_offset + new_height,
+            x_offset:x_offset + new_width
+        ] = resized
+
+        return canvas
+
+    def load_video(self, video_path):
         cap = cv2.VideoCapture(video_path)
 
         if not cap.isOpened():
@@ -31,7 +63,6 @@ class VideoPreprocessor:
         frames = []
 
         for frame_index in frame_indices:
-
             cap.set(cv2.CAP_PROP_POS_FRAMES, int(frame_index))
 
             success, frame = cap.read()
@@ -47,10 +78,7 @@ class VideoPreprocessor:
                 cv2.COLOR_BGR2RGB
             )
 
-            frame = cv2.resize(
-                frame,
-                (self.image_size, self.image_size)
-            )
+            frame = self.resize_with_padding(frame)
 
             frame = frame.astype(np.float32) / 255.0
 
@@ -62,7 +90,6 @@ class VideoPreprocessor:
 
 
 if __name__ == "__main__":
-
     processor = VideoPreprocessor()
 
     video_path = (

@@ -20,16 +20,12 @@ class INCLUDE50Dataset(Dataset):
 
         self.dataset_root = Path(dataset_root)
 
-        self.annotations = pd.read_csv(annotation_file)
+        # Load complete annotations
+        all_annotations = pd.read_csv(annotation_file)
 
-        # Keep only the requested dataset split
-        self.annotations = self.annotations[
-            self.annotations["dataset_split"] == split
-        ].reset_index(drop=True)
-
-        # Create consistent class-to-index mapping
+        # Create one shared mapping using all 50 classes
         self.classes = sorted(
-            self.annotations["label"].unique().tolist()
+            all_annotations["label"].unique().tolist()
         )
 
         self.class_to_idx = {
@@ -37,6 +33,31 @@ class INCLUDE50Dataset(Dataset):
             for index, label in enumerate(self.classes)
         }
 
+        self.idx_to_class = {
+            index: label
+            for label, index in self.class_to_idx.items()
+        }
+
+        # Validate requested split
+        valid_splits = {"train", "val", "test"}
+
+        if split not in valid_splits:
+            raise ValueError(
+                f"Invalid split: {split}. "
+                f"Choose from {valid_splits}"
+            )
+
+        # Filter annotations
+        self.annotations = all_annotations[
+            all_annotations["dataset_split"] == split
+        ].reset_index(drop=True)
+
+        if len(self.annotations) == 0:
+            raise ValueError(f"No videos found for split: {split}")
+
+        self.split = split
+
+        # Video preprocessing
         self.processor = VideoPreprocessor(
             num_frames=num_frames,
             image_size=image_size
@@ -51,14 +72,19 @@ class INCLUDE50Dataset(Dataset):
 
         video_path = self.dataset_root / row["video_path"]
 
+        # Process video
         frames = self.processor.load_video(str(video_path))
 
-        # (T, H, W, C) -> (T, C, H, W)
+        # Convert (T, H, W, C) to (T, C, H, W)
         video_tensor = torch.from_numpy(frames).permute(0, 3, 1, 2)
 
+        # Get label using shared mapping
         label = self.class_to_idx[row["label"]]
 
-        return video_tensor, torch.tensor(label, dtype=torch.long)
+        return video_tensor, torch.tensor(
+            label,
+            dtype=torch.long
+        )
 
 
 if __name__ == "__main__":
@@ -67,16 +93,18 @@ if __name__ == "__main__":
         "datasets/annotations/include50_valid_candidates.csv"
     )
 
-    dataset = INCLUDE50Dataset(
-        annotation_file=annotation_file,
-        split="train"
-    )
+    for split in ["train", "val", "test"]:
 
-    video, label = dataset[0]
+        dataset = INCLUDE50Dataset(
+            annotation_file=annotation_file,
+            split=split
+        )
 
-    print("Dataset loaded successfully!")
-    print("Total training videos:", len(dataset))
-    print("Number of classes:", len(dataset.classes))
-    print("Video tensor shape:", video.shape)
-    print("Label:", label.item())
-    print("Sign:", dataset.classes[label.item()])
+        print(f"\n{split.upper()} DATASET")
+        print("-" * 40)
+        print("Videos:", len(dataset))
+        print("Classes:", len(dataset.classes))
+        print("First class:", dataset.classes[0])
+        print("Last class:", dataset.classes[-1])
+
+    print("\nShared class mapping verified!")

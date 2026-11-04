@@ -24,3 +24,4 @@ python-multipart
 pydantic
 tqdm
 Pillow
+certifi
