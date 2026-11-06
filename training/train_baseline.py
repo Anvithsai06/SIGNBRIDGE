@@ -10,14 +10,15 @@ from torch.optim.lr_scheduler import ReduceLROnPlateau
 from training.data_loader import create_dataloaders
 from models.mobilenet_baseline import MobileNetV3Baseline
 
+
 # ==========================================
 # CONFIGURATION
 # ==========================================
 
-EPOCHS = 10
+EPOCHS = 15
 LEARNING_RATE = 0.0001
 WEIGHT_DECAY = 0.0001
-PATIENCE = 4
+PATIENCE = 5
 
 NUM_CLASSES = 50
 
@@ -26,6 +27,16 @@ RESULTS_DIR = "results"
 
 os.makedirs(CHECKPOINT_DIR, exist_ok=True)
 os.makedirs(RESULTS_DIR, exist_ok=True)
+
+HISTORY_PATH = os.path.join(
+    RESULTS_DIR,
+    "mobilenet_baseline_augmented_history.csv"
+)
+
+CHECKPOINT_PATH = os.path.join(
+    CHECKPOINT_DIR,
+    "mobilenet_baseline_augmented_best.pth"
+)
 
 
 # ==========================================
@@ -76,7 +87,6 @@ def train_one_epoch(model, loader, criterion, optimizer):
         predictions = outputs.argmax(dim=1)
 
         correct += (predictions == labels).sum().item()
-
         total += labels.size(0)
 
         progress.set_postfix(
@@ -119,7 +129,6 @@ def validate(model, loader, criterion):
             predictions = outputs.argmax(dim=1)
 
             correct += (predictions == labels).sum().item()
-
             total += labels.size(0)
 
     epoch_loss = total_loss / total
@@ -134,24 +143,30 @@ def validate(model, loader, criterion):
 
 def main():
 
-    print("\nLoading INCLUDE-50 datasets...")
+    print("\n" + "=" * 60)
+    print("SIGNBRIDGE - EXPERIMENT 3")
+    print("MobileNetV3 with Video-Level Augmentation")
+    print("=" * 60)
 
     train_loader, val_loader, test_loader = create_dataloaders()
 
-    print("Training videos:", len(train_loader.dataset))
+    print("\nTraining videos:", len(train_loader.dataset))
     print("Validation videos:", len(val_loader.dataset))
     print("Testing videos:", len(test_loader.dataset))
 
-    # Initialize CNN-LSTM
+    # Initialize MobileNetV3
     model = MobileNetV3Baseline(
-    num_classes=NUM_CLASSES,
-    pretrained=True
+        num_classes=NUM_CLASSES,
+        pretrained=True
     ).to(DEVICE)
 
     criterion = nn.CrossEntropyLoss()
 
     optimizer = AdamW(
-        filter(lambda p: p.requires_grad, model.parameters()),
+        filter(
+            lambda p: p.requires_grad,
+            model.parameters()
+        ),
         lr=LEARNING_RATE,
         weight_decay=WEIGHT_DECAY
     )
@@ -164,21 +179,13 @@ def main():
     )
 
     best_val_loss = float("inf")
+    best_val_accuracy = 0.0
+
     early_stop_counter = 0
-
-    history_path = os.path.join(
-        RESULTS_DIR,
-        "mobilenet_baseline_letterbox_history.csv"
-    )
-
-    checkpoint_path = os.path.join(
-        CHECKPOINT_DIR,
-        "mobilenet_baseline_letterbox_best.pth"
-    )
 
     history = []
 
-    print("\nStarting CNN-LSTM training...")
+    print("\nStarting MobileNetV3 training...")
     print("=" * 60)
 
     for epoch in range(EPOCHS):
@@ -214,18 +221,22 @@ def main():
         print(f"Learning Rate:   {current_lr:.6f}")
 
         history.append({
+
             "epoch": epoch + 1,
             "train_loss": train_loss,
             "train_accuracy": train_accuracy,
             "val_loss": val_loss,
             "val_accuracy": val_accuracy,
             "learning_rate": current_lr
+
         })
 
-        # Save best checkpoint
+        # Save best model based on validation loss
         if val_loss < best_val_loss:
 
             best_val_loss = val_loss
+            best_val_accuracy = val_accuracy
+
             early_stop_counter = 0
 
             torch.save(
@@ -233,10 +244,12 @@ def main():
                     "epoch": epoch + 1,
                     "model_state_dict": model.state_dict(),
                     "optimizer_state_dict": optimizer.state_dict(),
+                    "scheduler_state_dict": scheduler.state_dict(),
                     "best_val_loss": best_val_loss,
-                    "classes": train_loader.dataset.classes
+                    "best_val_accuracy": best_val_accuracy,
+                    "classes": train_loader.dataset.dataset.classes
                 },
-                checkpoint_path
+                CHECKPOINT_PATH
             )
 
             print("\nBest model checkpoint saved!")
@@ -252,7 +265,7 @@ def main():
 
         # Save training history
         with open(
-            history_path,
+            HISTORY_PATH,
             "w",
             newline=""
         ) as file:
@@ -272,11 +285,14 @@ def main():
             break
 
     print("\n" + "=" * 60)
-    print("CNN-LSTM TRAINING FINISHED")
+    print("EXPERIMENT 3 TRAINING FINISHED")
+    print("=" * 60)
 
     print("Best validation loss:", round(best_val_loss, 4))
-    print("Checkpoint:", checkpoint_path)
-    print("Training history:", history_path)
+    print("Best validation accuracy:", f"{best_val_accuracy * 100:.2f}%")
+
+    print("Checkpoint:", CHECKPOINT_PATH)
+    print("Training history:", HISTORY_PATH)
 
 
 if __name__ == "__main__":
