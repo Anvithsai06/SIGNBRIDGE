@@ -1,0 +1,191 @@
+video_path,actual_sign,predicted_sign,confidence,correct
+Greetings/51. Good Morning/MVI_9992.MOV,51. Good Morning,51. Good Morning,0.8354910016059875,True
+Days_and_Time/78. Year/MVI_4638.MOV,78. Year,67. Monday,0.371651291847229,False
+Electronics/53. Fan/MVI_4535.MOV,53. Fan,53. Fan,0.9094188809394836,True
+Electronics/54. Cell phone/MVI_4967.MOV,54. Cell phone,54. Cell phone,0.48879414796829224,True
+Greetings/48. Hello/MVI_0031.MOV,48. Hello,48. Hello,0.32789769768714905,True
+Adjectives/84. small little/MVI_9320.MOV,84. small little,2. quiet,0.27328920364379883,False
+Adjectives/79. short/MVI_9303.MOV,79. short,79. short,0.20397143065929413,True
+Adjectives/87. hot/MVI_9248.MOV,87. hot,87. hot,0.6606254577636719,True
+Places/35. Bank/MVI_3584.MOV,35. Bank,35. Bank,0.8074083924293518,True
+Adjectives/79. short/MVI_5191.MOV,79. short,79. short,0.7064940929412842,True
+Clothes/42. T-Shirt/MVI_3704.MOV,42. T-Shirt,42. T-Shirt,0.7667791247367859,True
+Clothes/37. Hat/MVI_4865.MOV,37. Hat,37. Hat,0.8071908950805664,True
+Means_of_Transportation/11. Car/MVI_3145.MOV,11. Car,11. Car,0.6866244673728943,True
+Adjectives/2. quiet/MVI_9539.MOV,2. quiet,2. quiet,0.8384625911712646,True
+Society/14. Election/MVI_4841.MOV,14. Election,14. Election,0.7350528240203857,True
+Pronouns/46. you (plural)/MVI_9948.MOV,46. you (plural),46. you (plural),0.8237586617469788,True
+People/77. Boy/MVI_4111.MOV,77. Boy,77. Boy,0.6428688168525696,True
+Adjectives/94. good/MVI_9430.MOV,94. good,94. good,0.9038969874382019,True
+People/78. Girl/MVI_4985.MOV,78. Girl,55. White,0.4114183187484741,False
+People/77. Boy/MVI_5134.MOV,77. Boy,77. Boy,0.77500981092453,True
+Days_and_Time/67. Monday/MVI_5447.MOV,67. Monday,67. Monday,0.7709088921546936,True
+Adjectives/84. small little/MVI_5127.MOV,84. small little,97. dry,0.3148849308490753,False
+Adjectives/3. happy/MVI_9297.MOV,3. happy,3. happy,0.7424522638320923,True
+Places/35. Bank/MVI_3419.MOV,35. Bank,35. Bank,0.7108027935028076,True
+Greetings/55. Thank you/MVI_0060_.MOV,55. Thank you,55. Thank you,0.9334576725959778,True
+Jobs/84. Teacher/MVI_5313.MOV,84. Teacher,84. Teacher,0.9254725575447083,True
+Places/28. Store or Shop/MVI_3384.MOV,28. Store or Shop,28. Store or Shop,0.909024178981781,True
+Adjectives/87. hot/MVI_9489.MOV,87. hot,87. hot,0.7745691537857056,True
+People/61. Father/MVI_5082.MOV,61. Father,61. Father,0.732964038848877,True
+Places/23. Court/MVI_3365.MOV,23. Court,23. Court,0.943374752998352,True
+Greetings/55. Thank you/MVI_9984.MOV,55. Thank you,55. Thank you,0.7317964434623718,True
+Clothes/44. Shoes/MVI_4889.MOV,44. Shoes,44. Shoes,0.792288064956665,True
+Electronics/54. Cell phone/MVI_4537.MOV,54. Cell phone,54. Cell phone,0.9147049188613892,True
+Electronics/54. Cell phone/MVI_5393.MOV,54. Cell phone,54. Cell phone,0.9283097386360168,True
+Days_and_Time/78. Year/MVI_5494.MOV,78. Year,78. Year,0.6962159276008606,True
+Animals/5. Cow/MVI_3048.MOV,5. Cow,5. Cow,0.8632190227508545,True
+Animals/1. Dog/MVI_8560.MP4,1. Dog,1. Dog,0.22635364532470703,True
+Adjectives/78. long/MVI_9379.MOV,78. long,79. short,0.315445214509964,False
+Means_of_Transportation/16. train ticket/MVI_3195.MOV,16. train ticket,16. train ticket,0.9166339039802551,True
+People/77. Boy/MVI_8644.MP4,77. Boy,78. Girl,0.6597825884819031,False
+Days_and_Time/86. Time/MVI_5527.MOV,86. Time,86. Time,0.9038318395614624,True
+Seasons/64. Fall/MVI_5435.MOV,64. Fall,64. Fall,0.8393343687057495,True
+Pronouns/40. I/MVI_0014.MOV,40. I,40. I,0.6905629634857178,True
+Pronouns/40. I/MVI_9880.MOV,40. I,40. I,0.951131284236908,True
+Clothes/37. Hat/MVI_8600.MP4,37. Hat,54. Black,0.3162747323513031,False
+Clothes/44. Shoes/MVI_5029.MOV,44. Shoes,44. Shoes,0.31556013226509094,True
+Adjectives/87. hot/MVI_9487.MOV,87. hot,87. hot,0.5735060572624207,True
+Adjectives/83. big large/MVI_5283.MOV,83. big large,83. big large,0.6041527390480042,True
+Adjectives/1. loud/MVI_9369.MOV,1. loud,1. loud,0.6823858618736267,True
+Means_of_Transportation/16. train ticket/MVI_8597.MP4,16. train ticket,16. train ticket,0.8213576674461365,True
+Animals/1. Dog/MVI_3029.MOV,1. Dog,1. Dog,0.9244551658630371,True
+People/78. Girl/MVI_5136.MOV,78. Girl,78. Girl,0.8225442171096802,True
+Greetings/48. Hello/MVI_9957.MOV,48. Hello,48. Hello,0.8718981742858887,True
+Greetings/55. Thank you/MVI_0006.MOV,55. Thank you,55. Thank you,0.937173068523407,True
+Pronouns/44. it/MVI_9969.MOV,44. it,44. it,0.6658692955970764,True
+Greetings/55. Thank you/MVI_0113.MOV,55. Thank you,51. Good Morning,0.5508719086647034,False
+Pronouns/44. it/MVI_9971.MOV,44. it,44. it,0.35401105880737305,True
+Days_and_Time/86. Time/MVI_5525.MOV,86. Time,86. Time,0.9286162257194519,True
+Adjectives/87. hot/MVI_9408.MOV,87. hot,94. good,0.6682756543159485,False
+Jobs/84. Teacher/MVI_4460.MOV,84. Teacher,84. Teacher,0.8099240660667419,True
+Adjectives/79. short/MVI_9220.MOV,79. short,94. good,0.297514945268631,False
+Adjectives/83. big large/MVI_9475.MOV,83. big large,83. big large,0.9651179313659668,True
+Means_of_Transportation/16. train ticket/MVI_3225.MOV,16. train ticket,16. train ticket,0.8838603496551514,True
+Adjectives/1. loud/MVI_9289.MOV,1. loud,1. loud,0.2997741997241974,True
+Animals/5. Cow/MVI_3073.MOV,5. Cow,5. Cow,0.8949391841888428,True
+Adjectives/1. loud/MVI_5258.MOV,1. loud,1. loud,0.6012625098228455,True
+Pronouns/44. it/MVI_9900.MOV,44. it,44. it,0.2860654592514038,True
+Adjectives/91. new/MVI_5230.MOV,91. new,91. new,0.7572077512741089,True
+Home/28. Window/MVI_9015.MP4,28. Window,28. Window,0.829315721988678,True
+Pronouns/46. you (plural)/MVI_9907.MOV,46. you (plural),46. you (plural),0.5954740047454834,True
+Home/28. Window/MVI_4363.MOV,28. Window,28. Window,0.805379331111908,True
+Places/35. Bank/MVI_3335.MOV,35. Bank,35. Bank,0.7989219427108765,True
+Colours/54. Black/MVI_4920.MOV,54. Black,77. Boy,0.5037311911582947,False
+Society/2. Death/MVI_4255.MOV,2. Death,2. Death,0.9443066120147705,True
+Home/40. Paint/MVI_4415.MOV,40. Paint,40. Paint,0.8426249623298645,True
+Pronouns/44. it/MVI_9899.MOV,44. it,44. it,0.9143742918968201,True
+Greetings/55. Thank you/MVI_9987.MOV,55. Thank you,55. Thank you,0.8979935646057129,True
+Adjectives/87. hot/MVI_5216.MOV,87. hot,87. hot,0.8427999019622803,True
+Places/23. Court/MVI_3286.MOV,23. Court,23. Court,0.27586206793785095,True
+Places/28. Store or Shop/MVI_3552.MOV,28. Store or Shop,28. Store or Shop,0.8794258832931519,True
+Seasons/61. Summer/MVI_4991.MOV,61. Summer,61. Summer,0.6870406866073608,True
+Animals/1. Dog/MVI_4147.MOV,1. Dog,1. Dog,0.7830909490585327,True
+Animals/4. Bird/MVI_2988.MOV,4. Bird,4. Bird,0.6434049606323242,True
+Days_and_Time/67. Monday/MVI_4593.MOV,67. Monday,67. Monday,0.7493951320648193,True
+Seasons/61. Summer/MVI_9122.MP4,61. Summer,61. Summer,0.9288479685783386,True
+Colours/55. White/MVI_5211.MOV,55. White,55. White,0.935816764831543,True
+Home/40. Paint/MVI_8821.MP4,40. Paint,40. Paint,0.8464598059654236,True
+Greetings/48. Hello/MVI_0029.MOV,48. Hello,40. I,0.6403098106384277,False
+Colours/54. Black/MVI_3740.MOV,54. Black,54. Black,0.6642990708351135,True
+Adjectives/1. loud/MVI_9536.MOV,1. loud,1. loud,0.6718555092811584,True
+People/66. Brother/MVI_5097.MOV,66. Brother,66. Brother,0.92674320936203,True
+Adjectives/2. quiet/MVI_5180.MOV,2. quiet,2. quiet,0.2986527681350708,True
+Seasons/61. Summer/MVI_4568.MOV,61. Summer,61. Summer,0.8764907121658325,True
+Means_of_Transportation/16. train ticket/MVI_3132.MOV,16. train ticket,16. train ticket,0.8651272058486938,True
+Pronouns/44. it/MVI_0076.MOV,44. it,40. I,0.37778007984161377,False
+Clothes/37. Hat/MVI_3836.MOV,37. Hat,37. Hat,0.8002104163169861,True
+Seasons/64. Fall/MVI_4578.MOV,64. Fall,54. Cell phone,0.8542234897613525,False
+Means_of_Transportation/11. Car/MVI_3174.MOV,11. Car,11. Car,0.8039640188217163,True
+Adjectives/83. big large/MVI_5203.MOV,83. big large,83. big large,0.7037493586540222,True
+Adjectives/78. long/MVI_9219.MOV,78. long,78. long,0.9015416502952576,True
+Adjectives/78. long/MVI_9300.MOV,78. long,78. long,0.8490886092185974,True
+Places/35. Bank/MVI_3338.MOV,35. Bank,35. Bank,0.9320813417434692,True
+Colours/54. Black/MVI_5207.MOV,54. Black,54. Black,0.8487656116485596,True
+Society/2. Death/MVI_8931.MP4,2. Death,2. Death,0.945334255695343,True
+Clothes/44. Shoes/MVI_4010.MOV,44. Shoes,44. Shoes,0.7173081040382385,True
+Days_and_Time/78. Year/MVI_4636.MOV,78. Year,67. Monday,0.5653834342956543,False
+Places/28. Store or Shop/MVI_3472.MOV,28. Store or Shop,28. Store or Shop,0.8001428246498108,True
+Jobs/84. Teacher/MVI_4457.MOV,84. Teacher,84. Teacher,0.875985860824585,True
+Adjectives/94. good/MVI_5158.MOV,94. good,94. good,0.6594516634941101,True
+Animals/5. Cow/MVI_3016.MOV,5. Cow,5. Cow,0.8686136603355408,True
+Days_and_Time/78. Year/MVI_4635.MOV,78. Year,67. Monday,0.6473786234855652,False
+Greetings/51. Good Morning/MVI_9971.MOV,51. Good Morning,51. Good Morning,0.8851275444030762,True
+Greetings/55. Thank you/MVI_9948.MOV,55. Thank you,55. Thank you,0.8623983263969421,True
+Means_of_Transportation/16. train ticket/MVI_3253.MOV,16. train ticket,16. train ticket,0.9357765316963196,True
+Adjectives/78. long/MVI_5268.MOV,78. long,78. long,0.45615509152412415,True
+Places/35. Bank/MVI_3503.MOV,35. Bank,35. Bank,0.8475900292396545,True
+Adjectives/84. small little/MVI_5206.MOV,84. small little,79. short,0.4394442141056061,False
+Colours/47. Red/MVI_5186.MOV,47. Red,66. Brother,0.36883673071861267,False
+Clothes/44. Shoes/MVI_3858.MOV,44. Shoes,44. Shoes,0.6431308388710022,True
+People/66. Brother/MVI_3927.MOV,66. Brother,66. Brother,0.35071513056755066,True
+Pronouns/44. it/MVI_0024.MOV,44. it,44. it,0.7103983759880066,True
+Means_of_Transportation/11. Car/MVI_3116.MOV,11. Car,16. train ticket,0.7932100296020508,False
+Society/14. Election/MVI_8967.MP4,14. Election,14. Election,0.4789695143699646,True
+Adjectives/78. long/MVI_9377.MOV,78. long,78. long,0.480731338262558,True
+Places/35. Bank/MVI_3581.MOV,35. Bank,35. Bank,0.7421102523803711,True
+Adjectives/3. happy/MVI_5263.MOV,3. happy,3. happy,0.8635087013244629,True
+Greetings/48. Hello/MVI_0030.MOV,48. Hello,48. Hello,0.5752514004707336,True
+Electronics/54. Cell phone/MVI_4969.MOV,54. Cell phone,54. Cell phone,0.5858833193778992,True
+Greetings/51. Good Morning/MVI_9993.MOV,51. Good Morning,51. Good Morning,0.29646405577659607,True
+Colours/47. Red/MVI_4898.MOV,47. Red,47. Red,0.47585099935531616,True
+Adjectives/83. big large/MVI_9395.MOV,83. big large,83. big large,0.6784226894378662,True
+Days_and_Time/78. Year/MVI_4637.MOV,78. Year,67. Monday,0.6274445056915283,False
+Animals/1. Dog/MVI_3086.MOV,1. Dog,1. Dog,0.8935772180557251,True
+Adjectives/94. good/MVI_5239.MOV,94. good,94. good,0.8142988085746765,True
+Pronouns/44. it/MVI_0077.MOV,44. it,44. it,0.7751582860946655,True
+Adjectives/1. loud/MVI_5177.MOV,1. loud,97. dry,0.44730010628700256,False
+Adjectives/79. short/MVI_5271.MOV,79. short,87. hot,0.7885195016860962,False
+Adjectives/3. happy/MVI_5183.MOV,3. happy,83. big large,0.2174777388572693,False
+Animals/1. Dog/MVI_2978.MOV,1. Dog,4. Bird,0.3102562427520752,False
+Home/28. Window/MVI_8768.MP4,28. Window,28. Window,0.9157902002334595,True
+Days_and_Time/78. Year/MVI_9177.MP4,78. Year,67. Monday,0.24478155374526978,False
+People/66. Brother/MVI_3929.MOV,66. Brother,66. Brother,0.8438189029693604,True
+Pronouns/40. I/MVI_0064.MOV,40. I,40. I,0.3932514786720276,True
+Adjectives/91. new/MVI_5150.MOV,91. new,91. new,0.8636875152587891,True
+Adjectives/91. new/MVI_9501.MOV,91. new,91. new,0.8926491737365723,True
+Means_of_Transportation/16. train ticket/MVI_3197.MOV,16. train ticket,16. train ticket,0.9465517997741699,True
+Society/2. Death/MVI_4801.MOV,2. Death,2. Death,0.8464809060096741,True
+Society/2. Death/MVI_4256.MOV,2. Death,2. Death,0.8376678228378296,True
+Animals/1. Dog/MVI_3087.MOV,1. Dog,1. Dog,0.9142885804176331,True
+Clothes/42. T-Shirt/MVI_4004.MOV,42. T-Shirt,42. T-Shirt,0.7693285942077637,True
+Adjectives/79. short/MVI_9462.MOV,79. short,79. short,0.9070175290107727,True
+Electronics/53. Fan/MVI_5388.MOV,53. Fan,53. Fan,0.4063415825366974,True
+Home/34. Pen/MVI_4906.MOV,34. Pen,34. Pen,0.9623355865478516,True
+Clothes/37. Hat/MVI_5156.MOV,37. Hat,37. Hat,0.6295177936553955,True
+Greetings/48. Hello/MVI_0091.MOV,48. Hello,48. Hello,0.7633680105209351,True
+Clothes/37. Hat/MVI_5155.MOV,37. Hat,37. Hat,0.5691351294517517,True
+Greetings/48. Hello/MVI_9915.MOV,48. Hello,48. Hello,0.8171349763870239,True
+Greetings/55. Thank you/MVI_9951.MOV,55. Thank you,51. Good Morning,0.48743271827697754,False
+People/77. Boy/MVI_5287.MOV,77. Boy,78. Girl,0.8766570091247559,False
+Society/2. Death/MVI_4800.MOV,2. Death,2. Death,0.5306479930877686,True
+Electronics/53. Fan/MVI_5387.MOV,53. Fan,53. Fan,0.800605297088623,True
+Pronouns/46. you (plural)/MVI_9905.MOV,46. you (plural),46. you (plural),0.9135929942131042,True
+Places/23. Court/MVI_3611.MOV,23. Court,23. Court,0.8948877453804016,True
+Places/28. Store or Shop/MVI_3634.MOV,28. Store or Shop,28. Store or Shop,0.6953010559082031,True
+Animals/1. Dog/MVI_2980.MOV,1. Dog,4. Bird,0.3135089874267578,False
+Clothes/42. T-Shirt/MVI_3852.MOV,42. T-Shirt,42. T-Shirt,0.661038875579834,True
+Means_of_Transportation/16. train ticket/MVI_4193.MOV,16. train ticket,37. Hat,0.5688813924789429,False
+Pronouns/44. it/MVI_0015.MOV,44. it,44. it,0.8982785940170288,True
+Jobs/91. Priest/MVI_4772.MOV,91. Priest,91. Priest,0.9010027647018433,True
+Greetings/51. Good Morning/MVI_9969.MOV,51. Good Morning,51. Good Morning,0.929338276386261,True
+Pronouns/44. it/MVI_0026.MOV,44. it,44. it,0.4367426037788391,True
+Seasons/64. Fall/MVI_9132.MP4,64. Fall,64. Fall,0.47840091586112976,True
+Home/40. Paint/MVI_8817.MP4,40. Paint,40. Paint,0.6995055675506592,True
+People/66. Brother/MVI_4077.MOV,66. Brother,66. Brother,0.9067216515541077,True
+Clothes/37. Hat/MVI_3984.MOV,37. Hat,37. Hat,0.9658306241035461,True
+Colours/54. Black/MVI_3742.MOV,54. Black,54. Black,0.7157255411148071,True
+Adjectives/84. small little/MVI_9397.MOV,84. small little,84. small little,0.7832143306732178,True
+Adjectives/1. loud/MVI_5259.MOV,1. loud,1. loud,0.3561595380306244,True
+Greetings/48. Hello/MVI_9982.MOV,48. Hello,48. Hello,0.6631953120231628,True
+Days_and_Time/86. Time/MVI_5077.MOV,86. Time,86. Time,0.8823366761207581,True
+People/66. Brother/MVI_3779.MOV,66. Brother,66. Brother,0.5983723402023315,True
+Adjectives/87. hot/MVI_9329.MOV,87. hot,87. hot,0.8056353330612183,True
+People/61. Father/MVI_5080.MOV,61. Father,61. Father,0.8902354836463928,True
+Adjectives/79. short/MVI_9222.MOV,79. short,94. good,0.4379177987575531,False
+Means_of_Transportation/16. train ticket/MVI_3163.MOV,16. train ticket,16. train ticket,0.8206735849380493,True
+Means_of_Transportation/11. Car/MVI_3176.MOV,11. Car,11. Car,0.8835798501968384,True
+Adjectives/2. quiet/MVI_9372.MOV,2. quiet,2. quiet,0.92364901304245,True
+Home/34. Pen/MVI_8793.MP4,34. Pen,34. Pen,0.897671103477478,True
+Colours/54. Black/MVI_4041.MOV,54. Black,37. Hat,0.3663140535354614,False
+Days_and_Time/78. Year/MVI_5049.MOV,78. Year,78. Year,0.44619494676589966,True

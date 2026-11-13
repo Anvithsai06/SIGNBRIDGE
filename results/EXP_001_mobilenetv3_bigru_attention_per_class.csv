@@ -1,0 +1,51 @@
+class,test_support,test_accuracy
+1. Dog,7,0.7142857142857143
+1. loud,6,0.8333333333333334
+11. Car,4,0.75
+14. Election,2,1.0
+16. train ticket,8,0.875
+19. House,0,
+2. Death,5,1.0
+2. quiet,3,1.0
+23. Court,3,1.0
+28. Store or Shop,4,1.0
+28. Window,3,1.0
+3. happy,3,0.6666666666666666
+34. Pen,2,1.0
+35. Bank,6,1.0
+37. Hat,6,0.8333333333333334
+4. Bird,1,1.0
+40. I,3,1.0
+40. Paint,3,1.0
+42. T-Shirt,3,1.0
+44. Shoes,4,1.0
+44. it,9,0.8888888888888888
+46. you (plural),3,1.0
+47. Red,2,0.5
+48. Hello,7,0.8571428571428571
+5. Cow,3,1.0
+51. Good Morning,4,1.0
+53. Fan,3,1.0
+54. Black,5,0.6
+54. Cell phone,4,1.0
+55. Thank you,7,0.7142857142857143
+55. White,1,1.0
+61. Father,2,1.0
+61. Summer,3,1.0
+64. Fall,3,0.6666666666666666
+66. Brother,5,1.0
+67. Monday,2,1.0
+77. Boy,4,0.5
+78. Girl,2,0.5
+78. Year,7,0.2857142857142857
+78. long,5,0.8
+79. short,6,0.5
+83. big large,4,1.0
+84. Teacher,3,1.0
+84. small little,4,0.25
+86. Time,3,1.0
+87. hot,6,0.8333333333333334
+91. Priest,1,1.0
+91. new,3,1.0
+94. good,3,1.0
+97. dry,0,

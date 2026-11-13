@@ -29,6 +29,7 @@ function App() {
   const [activePage, setActivePage] = useState("Dashboard");
   const [prediction, setPrediction] = useState(null);
   const [history, setHistory] = useState([]);
+  const [inferenceConfig, setInferenceConfig] = useState(null);
 
   const handlePrediction = (result) => {
     setPrediction(result);
@@ -225,8 +226,8 @@ function App() {
 
             <StatCard
               title="Input Frames"
-              value="16"
-              description="Frames per prediction"
+              value={inferenceConfig?.frame_count ?? "--"}
+              description={inferenceConfig ? "Checkpoint-configured frames" : "Loading model configuration"}
               icon={Video}
               color="emerald"
             />
@@ -267,7 +268,7 @@ function App() {
               </div>
 
               <div className="p-6">
-                <CameraPanel onPrediction={handlePrediction} />
+                <CameraPanel onPrediction={handlePrediction} onConfig={setInferenceConfig} />
               </div>
 
             </div>

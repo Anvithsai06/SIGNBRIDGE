@@ -5,11 +5,9 @@ import sys
 
 
 API_URL = "http://127.0.0.1:8000/api/predict"
+CONFIG_URL = "http://127.0.0.1:8000/api/config"
 
-NUM_FRAMES = 16
-
-
-def extract_frames(video_path):
+def extract_frames(video_path, num_frames):
 
     cap = cv2.VideoCapture(video_path)
 
@@ -24,7 +22,7 @@ def extract_frames(video_path):
     indices = np.linspace(
         0,
         total_frames - 1,
-        NUM_FRAMES,
+        num_frames,
         dtype=int
     )
 
@@ -56,9 +54,13 @@ def extract_frames(video_path):
 
 def test_prediction(video_path):
 
+    config_response = requests.get(CONFIG_URL, timeout=15)
+    config_response.raise_for_status()
+    frame_count = config_response.json()["frame_count"]
+
     print("Extracting video frames...")
 
-    frames = extract_frames(video_path)
+    frames = extract_frames(video_path, frame_count)
 
     print("Extracted frames:", len(frames))
 

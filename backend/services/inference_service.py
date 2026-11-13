@@ -13,12 +13,14 @@ class InferenceService:
         self.model = self.model_loader.get_model()
         self.device = self.model_loader.device
         self.classes = self.model_loader.classes
+        self.num_frames = self.model_loader.preprocessing["num_frames"]
+        self.image_size = self.model_loader.preprocessing["image_size"]
 
     def preprocess_frames(self, frames):
 
-        if len(frames) != 16:
+        if len(frames) != self.num_frames:
             raise ValueError(
-                f"Expected 16 frames, received {len(frames)}"
+                f"Expected {self.num_frames} frames, received {len(frames)}"
             )
 
         processed_frames = []
@@ -41,8 +43,8 @@ class InferenceService:
 
             # Preserve aspect ratio
             scale = min(
-                224 / width,
-                224 / height
+                self.image_size / width,
+                self.image_size / height
             )
 
             new_width = int(round(width * scale))
@@ -56,13 +58,13 @@ class InferenceService:
 
             # Letterbox padding
             canvas = np.full(
-                (224, 224, 3),
+                (self.image_size, self.image_size, 3),
                 114,
                 dtype=np.uint8
             )
 
-            x_offset = (224 - new_width) // 2
-            y_offset = (224 - new_height) // 2
+            x_offset = (self.image_size - new_width) // 2
+            y_offset = (self.image_size - new_height) // 2
 
             canvas[
                 y_offset:y_offset + new_height,
@@ -132,12 +134,45 @@ class InferenceService:
             "top_predictions": predictions
         }
 
+    def decode_video(self, video_path, max_duration_seconds=30):
+        """Decode a complete recording and sample it as training did: linspace over time."""
+        capture = cv2.VideoCapture(str(video_path))
+        if not capture.isOpened():
+            raise ValueError("Unable to read the uploaded video. Try MP4 or a browser-supported WebM codec.")
+        try:
+            frame_count = int(capture.get(cv2.CAP_PROP_FRAME_COUNT))
+            fps = float(capture.get(cv2.CAP_PROP_FPS))
+            if frame_count < self.num_frames:
+                raise ValueError(f"Video must contain at least {self.num_frames} frames.")
+            if not np.isfinite(fps) or fps <= 0:
+                raise ValueError("Video frame rate could not be determined.")
+            duration = frame_count / fps
+            if duration <= 0 or duration > max_duration_seconds:
+                raise ValueError(f"Video duration must be between 0 and {max_duration_seconds} seconds.")
+
+            # This matches VideoPreprocessor.load_video used for training/evaluation.
+            indices = np.linspace(0, frame_count - 1, self.num_frames, dtype=int)
+            frames = []
+            for index in indices:
+                capture.set(cv2.CAP_PROP_POS_FRAMES, int(index))
+                ok, frame = capture.read()
+                if not ok or frame is None or frame.ndim != 3 or frame.shape[2] != 3:
+                    raise ValueError("Unable to decode all sampled video frames.")
+                frames.append(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
+            return frames, {"frame_count": frame_count, "fps": fps, "duration_seconds": duration}
+        finally:
+            capture.release()
+
+    def predict_video(self, video_path):
+        frames, metadata = self.decode_video(video_path)
+        return self.predict(frames), metadata
+
 
 if __name__ == "__main__":
 
     service = InferenceService()
 
-    # Create 16 dummy RGB frames
+    # Use the frame count supplied by the loaded checkpoint.
     dummy_frames = [
         np.random.randint(
             0,
@@ -145,7 +180,7 @@ if __name__ == "__main__":
             (480, 640, 3),
             dtype=np.uint8
         )
-        for _ in range(16)
+        for _ in range(service.num_frames)
     ]
 
     result = service.predict(dummy_frames)
